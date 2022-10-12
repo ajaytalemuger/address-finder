@@ -1,14 +1,14 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 
+import apiAddress from "./routes/address";
+
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 8080;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Address Finder Server");
-});
+app.use("/api/address", apiAddress);
 
 app.listen(port, () => {
   console.log(`Server is running at port: ${port}`);
