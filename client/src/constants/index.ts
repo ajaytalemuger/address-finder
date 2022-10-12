@@ -1,0 +1,1 @@
+export const RESULT_TYPE_UNKNOWN = "unknown";

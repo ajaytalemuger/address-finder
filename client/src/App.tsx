@@ -1,10 +1,13 @@
 import React from 'react';
+
+import AddressFinderMap from "./components/addressFinderMap/AddressFinderMap";
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-        Address Finder Client
+        <AddressFinderMap />
     </div>
   );
 }
