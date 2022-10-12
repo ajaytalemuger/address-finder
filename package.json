@@ -6,7 +6,21 @@
   "scripts": {
     "serverDev": "npm run dev --prefix server",
     "clientDev": "npm start --prefix client",
-    "dev": "concurrently \"npm run serverDev\" \"npm run clientDev\""
+    "dev": "concurrently \"npm run serverDev\" \"npm run clientDev\"",
+
+    "clientBuild": "npm run build --prefix client",
+    "serverBuild": "npm run build --prefix server",
+    "build": "npm run serverBuild && npm run clientBuild && node moveBuild.js",
+
+    "serverStart": "npm run start --prefix server",
+    "start": "npm run serverStart",
+    "buildAndStart": "npm run build && npm start",
+
+    "serverCleanInstall": "npm ci --prefix server",
+    "clientCleanInstall": "npm ci --prefix client",
+    "serverInstall": "npm i --prefix server",
+    "clientInstall": "npm i --prefix client",
+    "postinstall": "npm run serverCleanInstall && npm run clientCleanInstall"
   },
   "author": "Ajay Rao T",
   "license": "ISC",
